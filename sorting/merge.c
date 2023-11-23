@@ -19,7 +19,7 @@ void merge_sort(int beg, int end)
         mid = (beg + end) / 2;
         merge_sort(beg, mid);
         merge_sort(mid + 1, end);
-        merge(beg, mid, end);   
+        merge(beg, mid, end);
     }
 }
 void merge(int beg, int mid, int end){
@@ -29,7 +29,7 @@ void merge(int beg, int mid, int end){
 
     while (i <= mid && j <= end)
     {
-        if(a[i] < a[j])
+        if(a[i] <= a[j])
             temp[index++] = a[i++];
         else
             temp[index++] = a[j++];
