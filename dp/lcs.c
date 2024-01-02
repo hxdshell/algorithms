@@ -5,7 +5,7 @@ enum direction{CROSS,TOP,LEFT};
 
 int lcs(char *x, char *y);
 void backtrack(int r, int c, int direct[r][c], int length);
-char *x = "acagcacta", *y = "agtcacac";
+char *x = "abcbdab", *y = "bdcaba";
 
 int main(int argc, char const *argv[])
 {
@@ -37,7 +37,7 @@ int lcs(char *x, char *y){
                 table[i][j] = table[i-1][j-1] + 1;
                 direct[i][j] = CROSS;
             }else{
-                if(table[i-1][j] > table[i][j-1]){
+                if(table[i-1][j] >= table[i][j-1]){
                     table[i][j] = table[i-1][j];
                     direct[i][j] = TOP;
                 }else{
