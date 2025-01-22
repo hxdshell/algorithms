@@ -3,5 +3,8 @@ huffman : huffman.c heap.c heap.h
 	gcc -c heap.c
 	gcc heap.o huffman.o -o huffman
 
-clean : 
+clean:
+	rm *.o
+	
+cleanwin : 
 	del *.o
